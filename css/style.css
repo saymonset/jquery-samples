@@ -13,6 +13,21 @@
 	display: flex;
 }
 
+.slideShowButtons{
+	width:600px;
+	display: flex;
+	position: relative;
+	margin-left: 5px;
+	top:-30px;
+}
+
+.slideShowButtons .slideButton{
+	width:600px;
+	display: flex;
+	position: relative;
+	margin-left: 5px;
+	top:-30px;
+}
 .cajaRoja{
 
 	position: relative;
