@@ -22,31 +22,13 @@
 }
 
 .slideShowButtons .slideButton{
-	width:600px;
-	display: flex;
-	position: relative;
-	margin-left: 5px;
-	top:-30px;
-}
-.cajaRoja{
-
-	position: relative;
-	width: 100px;
-	height: 100px;
-
-	background-color: red;
-	float: left;
-	margin-right: 10px;
-
+	cursor: pointer;
+	border-radius: 100%;
+	width: 15px;
+	height: 15px;
+	margin-left: 3px;
+	background-color: #a1a1a1;	
 }
 
-.cajaAzul{
 
-	position: relative;
-	width: 100px;
-	height: 100px;
-
-	background-color: blue;
-	float: left;
-	margin-right: 10px;
-}
+ 
