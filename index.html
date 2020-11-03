@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Slider</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<script src="js/lib/TweenMax.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+	
+	
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://s3.amazonaws.com/harvestful-cdn/seminario/favicon-32.png">
+<link rel="stylesheet" href="css/standardFront.css">	
+
+</head>
+<body>
+
+
+<div class="container" align="center">
+	
+	
+
+
+	<div class="background-primary"> 
+       
+        <!--Menu -->
+        <div id="ContainerMenu" class="pr">
+
+            <div id="Logo">
+
+                <img src="assets/ico/logo.png"/>
+
+            </div>
+
+            <div id="menuMobile" class="cP">
+
+                <img src="assets/ico/menu.svg"/>
+
+            </div>
+
+            <div    id="MenuMobileViews" 
+                    class="ptm-1 dfc title-style-1 fc-secondary">
+                
+                <div    modal="modalEventos" 
+                        class="itemsSelected pbm-1 plm-3 ptm-1 txtm-lft openModal" >
+
+                    <a class="general_main_1 mr-2 title-style-1 cP events-none">
+                         EVENTO                                       
+                    </a>
+
+                </div>
+
+                <div    modal="modalContacto" 
+                        class="itemsSelected pbm-1 plm-3 ptm-1 txtm-lft openModal" >
+
+                    <a class="general_main_2 mr-2 title-style-1 cP events-none">
+                         CONTACTOS                                  
+                    </a>
+
+                </div>
+
+                <div    modal="modalPreguntas" 
+                        class="itemsSelected pbm-1 plm-3 ptm-1 txtm-lft openModal" >
+
+                        <a class="general_main_3 mr-2 title-style-1 cP events-none">
+                         PREGUNTAS FRECUENTES                                      
+                        </a>
+
+                </div>
+
+                <div    modal="modalCompartir" 
+                        class="itemsSelected pbm-1 plm-3 ptm-1 txtm-lft openModal" >
+                    
+                    <a class="general_main_4 mr-2 title-style-1 cP events-none">
+                       COMPARTIR                                    
+                    </a>
+
+                </div>
+
+
+                <div class="dfr pbm-1 plm-3 ptm-1">
+
+                    <div    id="subMenuLanguage1" 
+                            style="height:2em;overflow:hidden;transition:height 1s" submenu="1" class="subMenuLanguage" >
+
+                        <div class="df txtm-lft cP events-none">
+                            
+                            <p class="title-style-1 langInUse general_dropDowns_language_1"></p>                                    
+                            <img alt="" src="assets/ico/arrow.svg" 
+                                style="margin-left:0.5em;margin-top: 0.4em;width:0.5em;height:0.5em;transform:rotate(0deg);transition:transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s"/>
+                        </div>
+
+                        <div class="pbm-1 plm-2 ptm-1 txtm-lft cP">
+                            <p class="changeLang title-style-1 setLanguage general_dropDowns_language_2"></p> 
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="padding:0em 3em" >
+                    <hr class="w-100" />
+                </div>   
+
+                <div style="display:none"class="itemsSelected dfr pbm-1 plm-3 ptm-1 title-style-1 txtm-lft">
+                    <a class="mr-2 title-style-1 cP events-none">
+                        LOGIN
+                    </a>
+                </div>   
+
+            </div>
+
+            <div id="containerTitlesMenu" class="fc-secondary">
+                <div>
+
+                    <a modal="modalEventos" 
+                       class="general_main_1 mr-2 title-style-1 cP openModal">
+                        EVENTOS                                        
+                    </a>
+
+                </div>
+
+                <div >
+                    <a modal="modalContacto" class="general_main_2 mr-2 title-style-1 cP openModal">
+                        CONTACTOS                                           
+                    </a>
+                </div>
+
+                <div>
+                    <a modal="modalPreguntas"  class="general_main_3 mr-2 title-style-1 cP openModal">
+                      PREGUNTAS FRECUENTES                                         
+                    </a>
+                </div>
+
+                <div>
+                    <a modal="modalCompartir" class="general_main_4 mr-2 title-style-1 cP openModal">
+                        COMPARTIR                                         
+                    </a>
+                </div>
+
+                <div id="dropDownsLanguage" class="pr">
+                        <div class="noSelect cP perfectCentered">
+                            <p class="langInUse general_dropDowns_language_1 title-style-1 "></p>  
+                            <img alt="" src="assets/ico/arrow.svg" style="margin-left:0.5em;width:0.5em;height:0.5em;transform:rotate(0deg);transition:transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s"/>
+                        </div>
+
+                        <div id="optionsDropDowns" style="display:none">  
+                            
+                            <img alt="" src="assets/ico/triangle.svg"/>
+                            <div    class="changeLang setLanguage general_dropDowns_language_2 txtm-lft title-style-1 cP" 
+                                    style=" padding:0.5em 1em;
+                                            border-radius:0.3em;">                                    
+                                INGLÉS
+                            </div>                    
+                        </div>   
+                 </div>
+            </div>
+
+            <div id="Login" class="dn title-style-1 cP fc-secondary">
+                LOGIN
+            </div>               
+</div>
+
+<!--fin de Menu-->
+
+<!--Modales-->
+<div id="ContainerModal" class="perfectCentered" style="display: block;">
+    
+    <div id="modal">
+
+        <img id="crossModal" src="assets/ico/cross.svg" style="width:1em" />
+        
+         
+</div>
+
+<!--Fin de modales-->
+
+<div    id="containerViews" 
+        class="perfectCentered">
+
+    <div    id="PaywallContainer" 
+            class="perfectCentered bs">
+                
+        <div    id="Slider" 
+                class="bslider"></div>
+
+
+
+        <!--Vista de llegada-->
+            
+                   
+
+            <div id="ContainerForm" class="ContainerForm perfectCentered">
+
+                <div id="animationScrollTop" class="events-none" style="display: block;"></div> 
+
+
+                <div    id="FormStart"  
+                        class="h-100 w-100 txtm-lft scroller pos-r prm-04">
+
+                    <h1 class="title-style-1 lh-1 fc-secondary general_title_name">
+                        Seminario <br/>Creando Riqueza
+                    </h1>
+
+                    <h3 class="mb-1-5 fc-secondary fweight-100 name_event_title1 event_title_author">
+                        Alejandro Cardona
+                    </h3>
+
+                    <div class="df mb-05 fc-primary" >
+
+                        <img    src="assets/ico/calendar.svg"  
+                                class="mr-05" 
+                                style="width: 0.8em;height: 1em;" />
+                        <p class="event_date">Sab, Jun 14 - Dom 15 a 9:00 AM - 8:30</p>
+
+                    </div>
+
+                    <div class="df mb-05 fc-primary">
+
+                        <img    src="assets/ico/place.svg" 
+                                class="mr-05" 
+                                style="width: 0.8em;height: 1em;" />
+                        <p class="event_place">16701 Collins, Ave, Sunny Isles Beach, FL 33160, USA</p>
+
+                    </div>
+
+                    <p class="mb-1 title-style-1 fc-secondary event_type_experience">Elige tu experiencia</p>
+
+					<!--Input Radio-->
+					
+					<div class="slideShow">
+						<ul>
+							<li><img src="img/slide1.png"></li>
+							<li><img src="img/slide2.png"></li>
+							<li><img src="img/slide3.png"></li>
+							<li><img src="img/slide4.png"></li>
+						</ul>
+					</div>
+
+					<div class="cajaAzul"></div>
+					<div class="cajaRoja"></div>
+					<div class="container-all-radio designInputRadio"></div>
+                    
+                    <!--Final Input Radio-->
+
+                    <div class="mt-1 fjs btn-container-double w-100" >
+            
+                            <div data-dir="evento" class="general_button_goEvent buttonSecondary w-100 btn noSelect perfectCentered fweight-600 pallm-05 mb-1">
+                                Ir al Evento
+                            </div>
+                          
+                            <div data-dir="continuar"   id="goFormStart" 
+                                    class="enabled-buttonPrimary w-100 btn noSelect perfectCentered fweight-600 pallm-05" typeexperience="">
+                                <span class="general_button_continue">Continuar</span>
+                                <img src="assets/svg/loading.svg" style="display:none; pointer-events: none ; width:2em"/> 
+                            </div> 
+                    </div>     
+
+                </div> 
+            
+            <!--Final Vista de llegada-->
+
+            
+            
+
+
+            
+
+           
+
+                <div id="animationScrollBottom" class="events-none"></div>
+            </div>
+            
+
+
+                <hr id="PaywallHr" />
+
+                <div id="containerFooter">
+
+                    <div id="MadeBy">
+
+                        <p class="general_madeBy txtm-lft mb-05 fc-secondary">Desarrollado por</p>
+    
+                        <img    alt="Logo del usuario" 
+                                id="ImgMadeBy" 
+                                src="assets/ico/logo-harvestful.svg"/>
+    
+                    </div>
+    
+
+                    <div id="Language" class="perfectCentered">
+
+                        <div class="ptm-05">
+  
+                               <div    id="subMenuLanguage2" 
+                                  style="height:2em;overflow:hidden;transition:height 1s" class="subMenuLanguage" submenu="2" >
+      
+                                  <div class="df txtm-lft cP events-none">
+                                      <img    alt="Earth" 
+                                              class="mr-05" 
+                                              src="assets/ico/earth.svg"/>    
+                                      <p class="title-style-1 langInUse general_dropDowns_language_1"></p>                                    
+                                      <img alt="" src="assets/ico/arrow.svg" 
+                                      style="margin-left:0.5em;margin-top: 0.4em;width:0.5em;height:0.5em;transform:rotate(0deg);transition:transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s"/>
+                                  </div>
+      
+                                  <div class="pbm-1 plm-2 ptm-1 txtm-lft cP">
+                                      <p class="changeLang title-style-1 setLanguage general_dropDowns_language_2"></p> 
+                                  </div>
+                              </div>
+  
+                          </div>
+                  </div>
+
+                </div>
+               
+             </div>
+        </div>     
+    </div>
+ 
+  
+
+  
+
+
+
+
+     
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+<!-- <script src="js/animaciones.js"></script> -->
+<script src="js/slideShow.js"></script>
+
+ </body>
+</html>
